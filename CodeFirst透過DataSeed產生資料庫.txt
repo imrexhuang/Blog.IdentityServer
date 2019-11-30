@@ -1,0 +1,25 @@
+https://www.cnblogs.com/laozhang-is-phi/p/10660403.html
+
+
+方式一：在NuGet Package Manager Console(套件管理員主控台)
+ 
+   1、add-migration InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb 
+   2、add-migration InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
+   3、add-migration AppDbMigration -c ApplicationDbContext -o Data
+   4、update-database -c PersistedGrantDbContext
+   5、update-database -c ConfigurationDbContext
+   6、update-database -c ApplicationDbContext
+ 
+
+
+方式二：在命令提示字元
+
+判斷是否支持命令行遷移，你可以在項目所在的目錄下打開一個命令 Power shell 並運行命令 dotnet ef
+
+在 PowerShell 中操作的：
+
+複製代碼
+//1.dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb
+//2.dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
+//3.dotnet ef migrations add AppDbMigration -c ApplicationDbContext -o Data
+//4.dotnet run /seed

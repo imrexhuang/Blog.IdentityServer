@@ -1,24 +1,7 @@
 ﻿
-![Logo](https://github.com/anjoy8/Blog.IdentityServer/blob/master/Blog.IdentityServer/wwwroot/logofull.png)
-
-&nbsp;
-&nbsp;
-
-## 给个星星! ⭐️
-如果你喜欢这个项目或者它帮助你, 请给 Star~（辛苦星咯）
-
-*********************************************************
-
-## Tips：
-```
-持续更新中。。。
-
-
-```
-
 
 *****************************************************
-### 跟踪教程
+### 官方教學
 
 
 博客园：https://www.cnblogs.com/laozhang-is-phi/
@@ -40,7 +23,7 @@
 
   技术：
 
-      * .Net Core 2.2 MVC
+      * .Net Core 3.0 MVC
       
       * EntityFramework Core
 

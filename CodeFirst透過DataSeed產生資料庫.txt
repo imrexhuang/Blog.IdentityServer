@@ -23,3 +23,13 @@ https://www.cnblogs.com/laozhang-is-phi/p/10660403.html
 //2.dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
 //3.dotnet ef migrations add AppDbMigration -c ApplicationDbContext -o Data
 //4.dotnet run /seed
+
+===
+安裝dotnet-ef
+C:\Users\mydev> dotnet tool install --global dotnet-ef --version 3.0
+您可以使用下列命令來叫用工具: dotnet-ef
+已成功安裝工具 'dotnet-ef' ('3.0.0' 版)。
+
+ref:
+https://www.nuget.org/packages/dotnet-ef
+https://docs.microsoft.com/zh-tw/ef/core/miscellaneous/cli/dotnet

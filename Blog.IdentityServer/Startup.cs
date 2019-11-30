@@ -38,7 +38,16 @@ namespace Blog.IdentityServer
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddIdentity<ApplicationUser, ApplicationRole>()
+            services.AddIdentity<ApplicationUser, ApplicationRole>(
+                options =>
+                {
+                    //https://andrewlock.net/creating-custom-password-validators-for-asp-net-core-identity-2/
+                    options.Password.RequiredLength = 8;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireDigit = false;
+                })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 

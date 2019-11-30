@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IO;
 using IdentityServer4.Quickstart.UI;
 using Microsoft.Extensions.Hosting;
+using Blog.IdentityServer.Validator;
 
 namespace Blog.IdentityServer
 {
@@ -49,7 +50,10 @@ namespace Blog.IdentityServer
                     options.Password.RequireDigit = false;
                 })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+               //https://stackoverflow.com/questions/42787120/how-to-use-identityserver4-with-custom-password-validation-with-asp-net-microsof
+               // custom validator : SameCharacterPasswordValidator
+               .AddPasswordValidator<SameCharacterPasswordValidator<ApplicationUser>>();
 
 
             services.AddMvc();
